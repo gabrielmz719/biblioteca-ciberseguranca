@@ -1,24 +1,25 @@
 const crypto = require("crypto");
+const { prototype } = require("events");
 
-const MyLibrary =[];
+const myLibrary = [];
 
-function Book(title,author,pages,read){
-    this.id=crypto.randomUUID();
-    this.title=title;
-    this.author=author;
-    this.pages=pages;
-    this.read=read;
+function Book(title , author, pages, read) {
+  this.id = crypto.randomUUID();
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.read = read;
+};
+
+function addBookToLibrary(title , author, pages, read) {
+  // take params, create a book then store it in the array
+  return myLibrary.push(new Book(title, author, pages, read));
+
 };
 
 
-Book.prototype.addBooktoLibrary = function(){
-    return `${this.id} ${this.title} ${this.author} ${this.pages} ${this.read}`;
-}
-const teste = new Book('nome','author','paginas','lido');
-const teste2 = new Book('nome2','author2','paginas2','nãolido');
 
 
-MyLibrary.push(teste.addBooktoLibrary())
+addBookToLibrary('teste1','author1','220','não lido');
 
-
-console.log(MyLibrary);
+console.log(myLibrary);
