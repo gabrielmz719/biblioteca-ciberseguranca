@@ -1,21 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca Cibersegurança</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>Biblioteca</h1>
     <div class="card-books">
-        <ul  id="cardBooks">
-
+        <ul id="cardBooks">
         </ul>
 
     </div>
-    
+
+    <!-- Um dialog simples contendo um form -->
+    <dialog close id="favDialog">
+        <h3>New Book</h3>
+        <form method="dialog">
+            <section>
+                <p>
+                    <label for="favAnimal">Your Book:</label>
+                </p>
+            </section>
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" id="title" />
+            </div>
+            <div>
+                <label for="author">Author:</label>
+                <input type="text" id="author" />
+            </div>
+            <div>
+                <label for="pages">pages</label>
+                <input type="number" id="pages" />
+            </div>
+            <div>
+                <select name="select">
+                    <option value="read">read</option>
+                    <option value="notread" selected>Not read</option>
+                </select>
+            </div>
+            <menu>
+                <button id="cancel" type="reset">Cancel</button>
+                <button type="submit">Confirm</button>
+            </menu>
+        </form>
+    </dialog>
+
+    <button id="updateDetails">New Book</button>
+
 
     <script src="./script.js"></script>
 </body>
+
 </html>
