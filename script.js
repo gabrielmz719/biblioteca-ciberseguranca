@@ -25,10 +25,22 @@ function displayBook() {
   });
 }
 
+//função que exibe formulario adcionar livro
 (function () {
   var updateButton = document.getElementById("updateDetails");
   var cancelButton = document.getElementById("cancel");
+  var confirmButton = document.getElementById("confirm");
   var favDialog = document.getElementById("favDialog");
+
+  let titleFormBook = document.getElementById("title");
+  let authorFormBook = document.getElementById("author");
+  let pagesFormBook = document.getElementById("pages");
+  let readFormBook = document.getElementById("read");
+  let notreadFormBook = document.getElementById("notread");
+
+
+
+
 
   // O botão Update abre uma Dialog
   updateButton.addEventListener("click", function () {
@@ -39,6 +51,14 @@ function displayBook() {
   cancelButton.addEventListener("click", function () {
     favDialog.close();
   });
+
+  confirmButton.addEventListener("click", (event)=>{
+    
+    addBookToLibrary(`${titleFormBook.value}`,`${authorFormBook.value}`,`${pagesFormBook.value}`, `${readFormBook.value}`||`${titleFormBook.value}`,`${authorFormBook.value}`,`${pagesFormBook.value}`, `${notreadFormBook.value}`);
+    console.log('funcionou');
+    event.preventDefault();
+    favDialog.close();
+  })
 })();
 
 
