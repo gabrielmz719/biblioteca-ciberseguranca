@@ -35,12 +35,6 @@ function displayBook() {
   let titleFormBook = document.getElementById("title");
   let authorFormBook = document.getElementById("author");
   let pagesFormBook = document.getElementById("pages");
-  let readFormBook = document.getElementById("read");
-  let notreadFormBook = document.getElementById("notread");
-
-
-
-
 
   // O botão Update abre uma Dialog
   updateButton.addEventListener("click", function () {
@@ -52,12 +46,26 @@ function displayBook() {
     favDialog.close();
   });
 
-  confirmButton.addEventListener("click", (event)=>{
-    
-    addBookToLibrary(`${titleFormBook.value}`,`${authorFormBook.value}`,`${pagesFormBook.value}`, `${readFormBook.value}`||`${titleFormBook.value}`,`${authorFormBook.value}`,`${pagesFormBook.value}`, `${notreadFormBook.value}`);
-    console.log('funcionou');
-    event.preventDefault();
-    favDialog.close();
+  confirmButton.addEventListener("click", (event) => {
+    const selectRead = document.getElementById('selectRead').value;
+    if (titleFormBook.value == '' || authorFormBook.value == '') {
+      alert('Por favor preencha os dados !');
+    } else {
+      addBookToLibrary(titleFormBook.value, authorFormBook.value, pagesFormBook.value, selectRead);
+
+      console.log('funcionou');
+      event.preventDefault();
+
+      //limpar campos após enviar form
+      document.getElementById('formBook').reset();
+
+      //fechar janela
+      favDialog.close();
+
+      console.log(myLibrary);
+      displayBook();
+
+    }
   })
 })();
 
@@ -69,6 +77,4 @@ addBookToLibrary('O Hobbit', 'J.R.R. Tolkien', 310, 'não lido');
 addBookToLibrary('Dom Casmurro', 'Machado de Assis', 256, 'lido');
 addBookToLibrary('O Pequeno Príncipe', 'Antoine de Saint-Exupéry', 96, 'lido');
 
-console.log(myLibrary);
 
-displayBook();
