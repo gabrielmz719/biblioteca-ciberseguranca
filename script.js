@@ -17,13 +17,32 @@ function addBookToLibrary(title, author, pages, read) {
 };
 
 function displayBook() {
+
   cardBooks.innerHTML = '';
   myLibrary.forEach(element => {
+    // criando botao delete item
+    let buttonDelete = document.createElement('button');
+    buttonDelete.textContent = 'Deletar';
+    let index = myLibrary.indexOf(element.id);
+
     let item = document.createElement('li');
-    item.textContent = `${element.title} - ${element.author} - ${element.pages} páginas - ${element.read}`;
+    item.textContent = `${element.title} - ${element.author} - ${element.pages} pages - ${element.read}-`;
     cardBooks.appendChild(item);
+    item.appendChild(buttonDelete);
+
+    buttonDelete.addEventListener("click", function deletar() {
+
+      alert(`item ${element.id} ${element.title} deletado`);
+
+      console.log(myLibrary);
+      displayBook();
+
+      return myLibrary.splice(index,1);
+
+    });
   });
 }
+
 
 //função que exibe formulario adcionar livro
 (function () {
@@ -46,10 +65,11 @@ function displayBook() {
     favDialog.close();
   });
 
+
   confirmButton.addEventListener("click", (event) => {
     const selectRead = document.getElementById('selectRead').value;
-    if (titleFormBook.value == '' || authorFormBook.value == '') {
-      alert('Por favor preencha os dados !');
+    if (titleFormBook.value == '' || authorFormBook.value == '' || pagesFormBook.value == '') {
+      alert('Por favor preencha os dados corretamente !');
     } else {
       addBookToLibrary(titleFormBook.value, authorFormBook.value, pagesFormBook.value, selectRead);
 
@@ -63,6 +83,7 @@ function displayBook() {
       favDialog.close();
 
       console.log(myLibrary);
+
       displayBook();
 
     }
@@ -76,5 +97,8 @@ addBookToLibrary('Harry Potter e a Pedra Filosofal', 'J.K. Rowling', 223, 'lido'
 addBookToLibrary('O Hobbit', 'J.R.R. Tolkien', 310, 'não lido');
 addBookToLibrary('Dom Casmurro', 'Machado de Assis', 256, 'lido');
 addBookToLibrary('O Pequeno Príncipe', 'Antoine de Saint-Exupéry', 96, 'lido');
+
+displayBook();
+
 
 
