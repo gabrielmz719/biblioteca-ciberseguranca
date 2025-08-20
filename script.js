@@ -22,8 +22,15 @@ function displayBook() {
   myLibrary.forEach(element => {
     // criando botao delete item
     let buttonDelete = document.createElement('button');
+    let buttonEditRead = document.createElement('button');
+
     buttonDelete.textContent = 'Deletar';
-    
+    buttonDelete.style.margin = '10px';
+
+
+    buttonEditRead.textContent = 'Lido';
+
+
     // serve para capturar o id do objeto
     let index = myLibrary.findIndex(item => item.id === element.id);
 
@@ -32,12 +39,25 @@ function displayBook() {
     cardBooks.appendChild(item);
     item.appendChild(buttonDelete);
 
-    buttonDelete.addEventListener("click", function deletar() {
+    // caso o livro tenha sido não tenha sido lido vai aparecer um botão para mudar de não lido para lido
+    if (element.read === 'notread') {
+      item.appendChild(buttonEditRead);
+    }
+    Book.prototype.toggleRead = function () {// basicamente cria um novo prototype pra book e coloca uma função nele que substiyui o notread para read
+      this.read = "read";
+    };
+
+
+    buttonEditRead.addEventListener("click", () => {
+      element.toggleRead();  //ativa a função que troca o lido para nn lido no elemento do html  
+      displayBook();          
+    });
+    buttonDelete.addEventListener("click", function deleteBook() {
 
       alert(`item ${element.id} ${element.title} deletado`);
 
       // o splice pega aquele index maldito que fiz e remove o id selecionado 2 dias pra descobrir essa merda
-      myLibrary.splice(index,1);
+      myLibrary.splice(index, 1);
       console.log(myLibrary);
       displayBook();
 
