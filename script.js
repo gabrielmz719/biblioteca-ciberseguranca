@@ -23,7 +23,9 @@ function displayBook() {
     // criando botao delete item
     let buttonDelete = document.createElement('button');
     buttonDelete.textContent = 'Deletar';
-    let index = myLibrary.indexOf(element.id);
+    
+    // serve para capturar o id do objeto
+    let index = myLibrary.findIndex(item => item.id === element.id);
 
     let item = document.createElement('li');
     item.textContent = `${element.title} - ${element.author} - ${element.pages} pages - ${element.read}-`;
@@ -34,10 +36,10 @@ function displayBook() {
 
       alert(`item ${element.id} ${element.title} deletado`);
 
+      // o splice pega aquele index maldito que fiz e remove o id selecionado 2 dias pra descobrir essa merda
+      myLibrary.splice(index,1);
       console.log(myLibrary);
       displayBook();
-
-      return myLibrary.splice(index,1);
 
     });
   });
