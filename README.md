@@ -1,42 +1,35 @@
- CyberLibrary - JavaScript Puro
- [Link do Projeto](https://gabrielmz719.github.io/biblioteca-ciberseguranca/)
+# 🛡️ CyberLibrary - JavaScript Puro
 
+[🔗 Acesse o Projeto](https://gabrielmz719.github.io/biblioteca-ciberseguranca/)
 
-Uma aplicação simples de gerenciamento de livros, feita com JavaScript, HTML e CSS puro. Permite adicionar, visualizar, marcar como lido e deletar livros dinamicamente.
+**CyberLibrary** é uma aplicação web simples e elegante para **gerenciamento de livros**, construída com **JavaScript, HTML e CSS puro**. Ela permite ao usuário **adicionar, visualizar, marcar como lido e deletar livros** de forma dinâmica, utilizando uma interface moderna e intuitiva.
 
- Funcionalidades
+---
 
- Adicionar livros com título, autor, páginas e status de leitura.
+## 🚀 Funcionalidades
 
- Visualizar livros em cards dinâmicos.
+- **Adicionar livros** com título, autor, número de páginas e status de leitura.  
+- **Visualizar livros** em cards interativos e estilizados.  
+- **Marcar livros como lidos** com apenas um clique.  
+- **Deletar livros** de maneira prática e rápida.  
+- **Formulário em modal** para adicionar livros de forma intuitiva e moderna.
 
- Marcar livros como Lidos com um clique.
+---
 
- Deletar livros facilmente.
+## ⚙️ Tecnologias Utilizadas
 
- Formulário em modal para adicionar livros de forma intuitiva.
+- **JavaScript**: lógica de criação de livros, manipulação do DOM e eventos.  
+- **HTML5**: estrutura da página e elementos de formulário.  
+- **CSS3**: estilização dos cards e modal, criando uma interface atraente.  
+- **Web APIs**:  
+  - `crypto.randomUUID()` para gerar IDs únicos para cada livro.  
+  - `<dialog>` para a implementação do modal interativo.
 
- Demonstração Visual
+---
 
-Exemplo de interface do projeto:
+## 📂 Estrutura do Projeto
 
-Modal para adicionar livros:
-
- Tecnologias Utilizadas
-
-JavaScript: lógica de livros, eventos e DOM.
-
-HTML5: estrutura da página e formulário.
-
-CSS3: estilização de cards e modal.
-
-Web APIs:
-
-crypto.randomUUID() para gerar IDs únicos.
-
-<dialog> para o modal interativo.
-
- Estrutura do Projeto
+```text
 myLibrary (array) → armazena os livros
 Book (constructor) → cria objetos Book com id, title, author, pages, read
 addBookToLibrary() → adiciona livros ao array
@@ -44,49 +37,42 @@ displayBook() → renderiza os cards e configura os botões
 Book.prototype.toggleRead() → altera status de leitura
 Event Listeners → Delete e Read nos cards, modal (Update, Cancel, Confirm)
 
- Como Usar
+📝 Como Usar
 
-Abra index.html no navegador.
+Abra o arquivo index.html no seu navegador.
 
-Clique em Adicionar Livro.
+Clique em Adicionar Livro para abrir o formulário.
 
-Preencha os campos do formulário e selecione o status de leitura.
+Preencha os campos obrigatórios e selecione o status de leitura.
 
-Clique em Confirmar para adicionar o livro.
+Clique em Confirmar para adicionar o livro à biblioteca.
 
-Use os botões Read e Delete nos cards para gerenciar os livros.
+Utilize os botões Read e Delete nos cards para gerenciar seus livros.
 
- Exemplo de Inicialização
+💡 Exemplo de Inicialização
 addBookToLibrary('Sistemas Operacionais Modernos', 'Andrew S. Tanenbaum', 864, 'Lido');
 addBookToLibrary('Caça a Bugs no Mundo Real', 'Pedro Yaworski', 264, 'Não Lido');
 addBookToLibrary('Redes de Computadores', 'Andrew S. Tanenbaum', 624, 'Não Lido');
 
 displayBook();
 
- Diferenciais
+🌟 Diferenciais
 
-Interface dinâmica e moderna.
+Interface moderna e interativa que atualiza em tempo real.
 
-Protótipos em JavaScript para manipulação eficiente de objetos.
+Uso de protótipos em JavaScript para gerenciamento eficiente de objetos.
 
-Modal intuitivo para adicionar livros.
+Modal intuitivo que melhora a experiência do usuário.
 
-Sistema leve, sem frameworks ou bibliotecas externas.
+Sistema leve e sem dependências externas, fácil de manter e entender.
 
- Possíveis Melhorias
+🔮 Possíveis Melhorias Futuras
 
-Salvar livros com localStorage para persistência entre sessões.
+Implementar localStorage para persistência dos livros entre sessões.
 
-Editar informações de livros existentes.
+Adicionar edição de informações dos livros cadastrados.
 
-Filtros e buscas por título, autor ou status.
+Criar filtros e buscas por título, autor ou status.
 
-Melhorar estilização responsiva para dispositivos móveis.
+Tornar a interface responsiva para dispositivos móveis.
 
- Estrutura de Arquivos Sugerida
-/project-root
-│
-├─ index.html       # Estrutura da página
-├─ style.css        # Estilo dos cards e modal
-├─ script.js        # Lógica da biblioteca
-└─ README.md        # Este arquivo
