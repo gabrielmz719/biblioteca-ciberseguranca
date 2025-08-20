@@ -34,7 +34,7 @@ function displayBook() {
     // serve para capturar o id do objeto
     let index = myLibrary.findIndex(item => item.id === element.id);
 
-    let item = document.createElement('li');
+    let item = document.createElement('p');
     item.textContent = `${element.title} - ${element.author} - ${element.pages} pages - ${element.read}-`;
     cardBooks.appendChild(item);
     item.appendChild(buttonDelete);

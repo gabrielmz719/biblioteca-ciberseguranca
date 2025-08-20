@@ -5,52 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca Cibersegurança</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <h1>Biblioteca</h1>
-    <div class="card-books">
-        <ul id="cardBooks">
-        </ul>
+    <header>
+        <div class="header-left">
+            <h1>CyberLibrary</h1>
+            <span>Sua biblioteca de cibersegurança</span>
+        </div>
+        <button id="updateDetails">New Book</button>
+    </header>
+    <div id="cardBooks" class="cardBooks">
+
 
     </div>
 
     <!-- Um dialog simples contendo um form -->
     <dialog close id="favDialog">
-        <h3>New Book</h3>
-        <form id="formBook" method="dialog">
-            <section>
-                <p>
-                    <label for="favAnimal">Your Book:</label>
-                </p>
-            </section>
-            <div>
-                <label for="title">Title:</label>
-                <input type="text" id="title" required />
-            </div>
-            <div>
-                <label for="author">Author:</label>
-                <input type="text" id="author" required />
-            </div>
-            <div>
-                <label for="pages">pages</label>
-                <input type="number" id="pages"  required />
-            </div>
-            <div>
-                <select name="select" id="selectRead">
-                    <option id='read' value="read">read</option>
-                    <option id='notread' value="notread" selected>Not read</option>
-                </select>
-            </div>
-            <menu>
-                <button id="cancel" type="reset">Cancel</button>
-                <button id="confirm" type="submit">Confirm</button>
-            </menu>
-        </form>
-    </dialog>
-
-    <button id="updateDetails">New Book</button>
+    <h3>New Book</h3>
+    <form id="formBook" method="dialog">
+        <section>
+            <p>
+                <label for="favAnimal">Your Book:</label>
+            </p>
+        </section>
+        <div>
+            <label for="title">Title:</label>
+            <input type="text" id="title" required />
+        </div>
+        <div>
+            <label for="author">Author:</label>
+            <input type="text" id="author" required />
+        </div>
+        <div>
+            <label for="pages">Pages:</label>
+            <input type="number" id="pages" required />
+        </div>
+        <div>
+            <label for="selectRead">Status:</label>
+            <select name="select" id="selectRead">
+                <option id='read' value="read">Read</option>
+                <option id='notread' value="notread" selected>Not read</option>
+            </select>
+        </div>
+        <menu>
+            <button id="cancel" type="reset">Cancel</button>
+            <button id="confirm" type="submit">Confirm</button>
+        </menu>
+    </form>
+</dialog>
 
 
     <script src="./script.js"></script>

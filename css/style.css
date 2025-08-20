@@ -1,0 +1,25 @@
+@import "./header.css";
+@import "./dialogForm.css";
+
+:root {
+    --bg-header: linear-gradient(90deg, #0f0f2f, #1f1f3f);
+    --bg-body: #1a1a2e;
+    --text-main: #00ff99;
+    --text-sub: #aaa;
+    --btn-bg: #00ff99;
+    --btn-bg-hover: #00cc77;
+    --btn-text: #1a1a2e;
+    --dialog-bg: #252547;
+    --dialog-border: #00ff99;
+    --input-bg: #1a1a2e;
+    --input-border: #00ff99;
+    --input-text: #fff;
+}
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background-color: var(--bg-body);
+        color: #fff;
+    }
+
+    
