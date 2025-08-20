@@ -142,11 +142,9 @@ function displayBook() {
 })();
 
 
-addBookToLibrary('O Senhor dos Anéis', 'J.R.R. Tolkien', 1178, 'lido');
-addBookToLibrary('1984', 'George Orwell', 328, 'não lido');
-addBookToLibrary('Harry Potter e a Pedra Filosofal', 'J.K. Rowling', 223, 'lido');
-addBookToLibrary('O Hobbit', 'J.R.R. Tolkien', 310, 'não lido');
-addBookToLibrary('Dom Casmurro', 'Machado de Assis', 256, 'lido');
-addBookToLibrary('O Pequeno Príncipe', 'Antoine de Saint-Exupéry', 96, 'lido');
+addBookToLibrary('Sistemas Operacionais Modernos', ' Andrew S. Tanenbaum', 864, 'lido');
+addBookToLibrary('Caça a Bugs no Mundo Real: Um Guia de Campo para Hacking na Web', 'Pedro YaworskiPedro Yaworski', 264, 'não lido');
+addBookToLibrary('Redes de Computadores', 'Andrew S. Tanenbaum', 624, 'não lido');
+
 
 displayBook();
