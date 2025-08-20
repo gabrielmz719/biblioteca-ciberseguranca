@@ -1,5 +1,7 @@
 @import "./header.css";
 @import "./dialogForm.css";
+@import "./card.css";
+@import "./bandeiras.css";
 
 :root {
     --bg-header: linear-gradient(90deg, #0f0f2f, #1f1f3f);

@@ -1,0 +1,77 @@
+/* container dos cards */
+#cardBooks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsivo */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* cada card */
+.book-card {
+  background: #252547;
+  border: 1px solid var(--text-main);
+  border-radius: 12px;
+  padding: 20px;
+  color: var(--input-text);
+  box-shadow: 0 0 15px rgba(0, 255, 153, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 255, 153, 0.6);
+}
+
+.book-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--text-main);
+  font-size: 20px;
+}
+
+.book-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: var(--text-sub);
+}
+
+/* container dos botões */
+.card-actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+/* estilo dos botões */
+.card-actions button {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* botão deletar */
+.card-actions button:first-child {
+  background: #ff3b3b; /* vermelho chamativo */
+  color: #fff;
+}
+
+.card-actions button:first-child:hover {
+  background: #cc2e2e;
+  transform: scale(1.05);
+}
+
+/* botão lido */
+.card-actions button:last-child {
+  background: var(--btn-bg); /* verde neon */
+  color: var(--btn-text);
+}
+
+.card-actions button:last-child:hover {
+  background: var(--btn-bg-hover);
+  transform: scale(1.05);
+}

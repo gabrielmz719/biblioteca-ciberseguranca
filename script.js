@@ -19,48 +19,77 @@ function addBookToLibrary(title, author, pages, read) {
 function displayBook() {
 
   cardBooks.innerHTML = '';
+
   myLibrary.forEach(element => {
+    let card = document.createElement('div');
+    card.classList.add('book-card');//adciona uma classe ao card
+
+    let title = document.createElement('h3');
+    title.textContent = element.title;
+
+    let author = document.createElement('p');
+    author.textContent = `Author: ${element.author}`;
+
+    let pages = document.createElement('p');
+    pages.textContent = `Pages: ${element.pages}`;
+
+    let status = document.createElement('p');
+    status.textContent = `Status: ${element.read}`;
+
+
+    //buttons 
     // criando botao delete item
     let buttonDelete = document.createElement('button');
+    //criando botão para marcar lido
     let buttonEditRead = document.createElement('button');
 
-    buttonDelete.textContent = 'Deletar';
-    buttonDelete.style.margin = '10px';
+    buttonDelete.textContent = 'Delete';
+    buttonEditRead.textContent = 'Read';
 
 
-    buttonEditRead.textContent = 'Lido';
 
+    let actions = document.createElement('div');//container pros botões
+    actions.classList.add('card-actions');
 
-    // serve para capturar o id do objeto
-    let index = myLibrary.findIndex(item => item.id === element.id);
-
-    let item = document.createElement('p');
-    item.textContent = `${element.title} - ${element.author} - ${element.pages} pages - ${element.read}-`;
-    cardBooks.appendChild(item);
-    item.appendChild(buttonDelete);
+    actions.appendChild(buttonDelete);
 
     // caso o livro tenha sido não tenha sido lido vai aparecer um botão para mudar de não lido para lido
-    if (element.read === 'notread') {
-      item.appendChild(buttonEditRead);
+    if (element.read === 'Not Read') {
+      actions.appendChild(buttonEditRead);
     }
+
+
+    //montar card 
+    card.appendChild(title);
+    card.appendChild(author);
+    card.appendChild(pages);
+    card.appendChild(status);
+    card.appendChild(actions);
+
+    cardBooks.appendChild(card);
+
+
+
     Book.prototype.toggleRead = function () {// basicamente cria um novo prototype pra book e coloca uma função nele que substiyui o notread para read
-      this.read = "read";
+      this.read = "Read";
     };
 
 
     buttonEditRead.addEventListener("click", () => {
       element.toggleRead();  //ativa a função que troca o lido para nn lido no elemento do html  
-      displayBook();          
+      displayBook();
     });
-    buttonDelete.addEventListener("click", function deleteBook() {
 
-      alert(`item ${element.id} ${element.title} deletado`);
+    buttonDelete.addEventListener("click", function deleteBook() {
+      // serve para capturar o id do objeto
+      let index = myLibrary.findIndex(item => item.id === element.id);
+
+      alert(`O livro ${element.title} foi deletado deletado!`);
 
       // o splice pega aquele index maldito que fiz e remove o id selecionado 2 dias pra descobrir essa merda
       myLibrary.splice(index, 1);
       console.log(myLibrary);
       displayBook();
-
     });
   });
 }
@@ -121,6 +150,3 @@ addBookToLibrary('Dom Casmurro', 'Machado de Assis', 256, 'lido');
 addBookToLibrary('O Pequeno Príncipe', 'Antoine de Saint-Exupéry', 96, 'lido');
 
 displayBook();
-
-
-

@@ -9,6 +9,8 @@
 </head>
 
 <body>
+   
+
     <header>
         <div class="header-left">
             <h1>CyberLibrary</h1>
@@ -23,41 +25,45 @@
 
     <!-- Um dialog simples contendo um form -->
     <dialog close id="favDialog">
-    <h3>New Book</h3>
-    <form id="formBook" method="dialog">
-        <section>
-            <p>
-                <label for="favAnimal">Your Book:</label>
-            </p>
-        </section>
-        <div>
-            <label for="title">Title:</label>
-            <input type="text" id="title" required />
-        </div>
-        <div>
-            <label for="author">Author:</label>
-            <input type="text" id="author" required />
-        </div>
-        <div>
-            <label for="pages">Pages:</label>
-            <input type="number" id="pages" required />
-        </div>
-        <div>
-            <label for="selectRead">Status:</label>
-            <select name="select" id="selectRead">
-                <option id='read' value="read">Read</option>
-                <option id='notread' value="notread" selected>Not read</option>
-            </select>
-        </div>
-        <menu>
-            <button id="cancel" type="reset">Cancel</button>
-            <button id="confirm" type="submit">Confirm</button>
-        </menu>
-    </form>
-</dialog>
+        <h3>New Book</h3>
+        <form id="formBook" method="dialog">
+            <section>
+                <p>
+                    <label for="favAnimal">Your Book:</label>
+                </p>
+            </section>
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" id="title" required />
+            </div>
+            <div>
+                <label for="author">Author:</label>
+                <input type="text" id="author" required />
+            </div>
+            <div>
+                <label for="pages">Pages:</label>
+                <input type="number" id="pages" required />
+            </div>
+            <div>
+                <label for="selectRead">Status:</label>
+                <select name="select" id="selectRead">
+                    <option id='read' value="Read">Read</option>
+                    <option id='notread' value="Not Read" selected>Not read</option>
+                </select>
+            </div>
+            <menu>
+                <button id="cancel" type="reset">Cancel</button>
+                <button id="confirm" type="submit">Confirm</button>
+            </menu>
+        </form>
+    </dialog>
 
 
     <script src="./script.js"></script>
+    <script src="./tradutor.js"></script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 
 </html>
